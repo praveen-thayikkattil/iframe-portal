@@ -17,7 +17,7 @@
   }
 
   &:before {
-    background: rgba(black, 0.6);
+    background: yellow; // rgba(black, 0.6);
     content: "";
     position: absolute;
     z-index: 100;
@@ -31,6 +31,7 @@
 #sign-in,
 #sign-up {
   z-index: 200;
+  position: relative;
 }
 
 .nav-open {
@@ -40,7 +41,7 @@
   background: none;
   border: 0;
   box-shadow: none;
-  color: white;
+  color: black;
   font-size: 18px;
   position: absolute;
   width: 48px;
@@ -50,7 +51,7 @@
   z-index: 9999;
   outline: none;
   transition: all 0.3s ease-out;
-  text-indent: -9999px;
+  //   text-indent: -9999px;
   transform: scale(0.8);
   &:hover,
   &:focus,
@@ -72,6 +73,7 @@
   transition: all 0.3s ease-out;
   color: #1a52d3;
   font-size: 24px;
+  text-decoration: none;
   br {
     display: none;
   }
@@ -178,5 +180,37 @@
   }
   @media screen and (min-width: 1200px) {
     width: 70%;
+  }
+}
+
+#iframe-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+}
+
+#iframe-canvas {
+  width: 720px;
+  height: 404px;
+  margin-left: -310px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  margin-top: -202px;
+  iframe {
+  }
+  button {
+    margin-top: 20px;
+    height: 40px;
+    line-height: 40px;
+    text-transform: capitalize;
+    background-color: royalblue;
+    color: white;
+    border: 1px solid navy;
+    box-shadow: none;
+    border-radius: 4px;
   }
 }

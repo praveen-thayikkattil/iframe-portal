@@ -1,31 +1,62 @@
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Main from './components/Main';
 
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <div className="page-wrap">
-        <button className="nav-open">MENU</button>
+function hasClass(element, cls) {
+  return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
 
-        <a className="app-logo" href='/'>Iframe Portal</a>
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-        <nav id="main-nav" className='sidebar-active'>
-          <button className="nav-close">+</button>
+    this.state = {
+      mainNavOpen: false
+    }
+  }
 
-          <h6 className="logo-text">Iframe Portal</h6>
+  onClickOut = (e) => {
+    if (hasClass(e.target, 'nav-open')) {
+      return;
+    } else {
+      this.setState({ 
+        mainNavOpen: false
+      })
+    }
+  }
 
-          <ul>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/sign-in'>Sign In</a></li>
-            <li><a href='/sign-up'>Sign Up</a></li>
-          </ul>
-        </nav>
+  render() {
+    return (
+      <div className="App">
+        <div className="page-wrap">
+          <button className="nav-open" onClick={() => this.setState({ mainNavOpen: true })}>MENU</button>
 
-        <Main/>
+          <Link
+            className="app-logo" 
+            onClick={() => this.setState({ mainNavOpen: false })} 
+            to='/'
+          >
+            Iframe Portal
+          </Link>
+
+          <nav id="main-nav" className={`${this.state.mainNavOpen ? 'sidebar-active' : ''}`}>
+            <button className="nav-close" onClick={() => this.setState({ mainNavOpen: false })}>+</button>
+
+            <h6 className="logo-text">Iframe Portal</h6>
+
+            <ul>
+              <li><a href='/'>Home</a></li>
+              <li><a href='/sign-in'>Sign In</a></li>
+              <li><a href='/sign-up'>Sign Up</a></li>
+            </ul>
+          </nav>
+          <Main mainNavOpen={this.state.mainNavOpen} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
