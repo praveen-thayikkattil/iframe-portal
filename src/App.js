@@ -1,3 +1,5 @@
+import Main from './components/Main';
+
 import './App.scss';
 
 function App() {
@@ -9,16 +11,18 @@ function App() {
         <a className="app-logo" href='/'>Iframe Portal</a>
 
         <nav id="main-nav" className='sidebar-active'>
-              <button className="nav-close">+</button>
+          <button className="nav-close">+</button>
 
-              <h6 className="logo-text">Iframe Portal</h6>
+          <h6 className="logo-text">Iframe Portal</h6>
 
-              <ul>
-                <li><a href='/'>Home</a></li>
-                <li><a href='/sign-in'>Sign In</a></li>
-                <li><a href='/sign-up'>Sign Up</a></li>
-              </ul>
-            </nav>
+          <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/sign-in'>Sign In</a></li>
+            <li><a href='/sign-up'>Sign Up</a></li>
+          </ul>
+        </nav>
+
+        <Main/>
       </div>
     </div>
   );
