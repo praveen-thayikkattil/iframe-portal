@@ -41,10 +41,19 @@
   display: flex;
   align-items: center;
   align-content: center;
-  justify-content: center;
-  h1 {
-    margin: 0;
+  // justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  h4 {
+    margin: 20px 0 0 20px;
     padding: 0;
+    align-self: flex-start;
+  }
+  a {
+    margin: -20px 0 0 0;
+    padding: 0;
+    align-self: flex-end;
+    margin-right: 50px;
   }
 }
 

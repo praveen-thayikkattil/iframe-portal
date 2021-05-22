@@ -44,7 +44,7 @@ const Child = () => {
         <div id="iframe-canvas">
             <iframe id="ytplayer" type="text/html" width="720" height="405"
 src="https://www.youtube.com/embed/Mk1NY9m6Hlw?autoplay=1&enablejsapi=1"
-frameBorder="0" allowFullscreen title="UST Global Trivandrum Campus Video"></iframe>
+frameBorder="0" allowFullScreen title="UST Global Trivandrum Campus Video"></iframe>
 
             <button>Click to send Video Title to outer app component</button>
         </div>

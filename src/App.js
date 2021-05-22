@@ -37,8 +37,8 @@ function App() {
 
           <ul>
             <li><a href='/'>Home</a></li>
-            <li><a href='/sign-in'>Sign In</a></li>
-            <li><a href='/sign-up'>Sign Up</a></li>
+            <li><a href='/' onClick={unsetToken}>Sign In</a></li>
+            {/* <li><a href='/sign-up'>Sign Up</a></li> */}
             <li><a href='/' onClick={unsetToken}>Logout</a></li>
           </ul>
         </nav>
