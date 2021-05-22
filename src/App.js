@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import Main from './components/Main';
 import Toolbar from './components/Toolbar';
 import Login from './components/Login';
+import useToken from './components/useToken';
 
 import './App.scss';
 
 function App() {
   const [mainNavOpen, updateNavState] = useState(false);
-  const [token, setToken] = useState();
+  const { token, setToken } = useToken();
 
   if (!token) {
     return <Login setToken={setToken} />
