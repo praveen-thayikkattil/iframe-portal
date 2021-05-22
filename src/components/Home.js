@@ -13,8 +13,7 @@ class Home extends Component {
     }
 
     handleClick = e => {
-        const videoTitle = e.target.dataset.title;
-        console.log(videoTitle);
+        const videoTitle = e.target.previousElementSibling.title;
 
         this.setState(state => ({
             videoTitle
@@ -47,8 +46,7 @@ const Child = () => {
 src="https://www.youtube.com/embed/Mk1NY9m6Hlw?autoplay=1&enablejsapi=1"
 frameBorder="0" allowFullscreen title="UST Global Trivandrum Campus Video"></iframe>
 
-            <button data-title="UST Global Trivandrum Campus Video
-">Click to send Video Title to outer app component</button>
+            <button>Click to send Video Title to outer app component</button>
         </div>
     );
 }
