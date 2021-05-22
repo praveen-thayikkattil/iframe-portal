@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Main from './components/Main';
 import Toolbar from './components/Toolbar';
@@ -7,9 +7,6 @@ import Login from './components/Login';
 import './App.scss';
 
 function App() {
-  // this.state = {
-  //     mainNavOpen: false
-  // };
   const [mainNavOpen, updateNavState] = useState(false);
   const [token, setToken] = useState();
 
