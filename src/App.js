@@ -9,7 +9,7 @@ import './App.scss';
 
 function App() {
   const [mainNavOpen, updateNavState] = useState(false);
-  const { token, setToken } = useToken();
+  const { token, setToken, unsetToken } = useToken();
 
   if (!token) {
     return <Login setToken={setToken} />
@@ -39,6 +39,7 @@ function App() {
             <li><a href='/'>Home</a></li>
             <li><a href='/sign-in'>Sign In</a></li>
             <li><a href='/sign-up'>Sign Up</a></li>
+            <li><a href='/' onClick={unsetToken}>Logout</a></li>
           </ul>
         </nav>
 
